@@ -138,7 +138,7 @@ timelines = 0
 from concurrent.futures import ThreadPoolExecutor
 
 results = []
-with ThreadPoolExecutor(max_workers=40) as executor:
+with ThreadPoolExecutor(max_workers=60) as executor:
     # Submit two tasks to run in parallel
     for i, stop in enumerate(leaves):
         print(f"computing leaf {i+1}/{n_leaves}")
@@ -146,6 +146,7 @@ with ThreadPoolExecutor(max_workers=40) as executor:
         _ = executor.submit(dfs_helper, stop)
         results.append(_)
     
+    print("Exitting executor block...")
     # executor.submit(worker, 1)
     # executor.submit(worker, 2)
 
