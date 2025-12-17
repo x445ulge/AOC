@@ -125,6 +125,7 @@ def part2_bruteforce_dfs():
             for i, (curr, target) in enumerate(zip(current_joltages, target_joltages)):
                 if curr > target:
                     return float('inf')
+            
             if pushes >= best_solution[0]:
                 return float('inf')
 
